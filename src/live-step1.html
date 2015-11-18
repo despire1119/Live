@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CRM</title>
+    <meta name="keywords" content="项目关键词"/>
+    <meta name="description" content="项目描述"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script>
+        var sn = sn || {}
+    </script>
+
+    <!-- 引入全站公用资源文件 -->
+    <!--#include file="/include/resources.shtml"-->
+
+    <!-- 引入项目css资源文件,并配置构建地址演示 -->
+    <!-- build:css ./assets/css/style.css -->
+    <link rel="stylesheet" href="../../../newCode/CRM/1.0/src/css/style.scss"/>
+    <!-- endbuild -->
+    <!-- build:css ./assets/css/calendar.css -->
+    <link rel="stylesheet" href="../../../newCode/CRM/1.0/src/css/calendar.scss"/>
+    <!-- endbuild -->
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/public/js/DD_belatedPNG.js"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix(".crm-top-logo");
+    </script>
+    <![endif]-->
+</head>
+<!--[if lt IE 7 ]>
+<body class="ie ie6"><![endif]-->
+<!--[if IE 7 ]>
+<body class="ie ie7"><![endif]-->
+<!--[if IE 8 ]>
+<body class="ie ie8"><![endif]-->
+<!--[if IE 9 ]>
+<body class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body><!--<![endif]-->
+
+<!-- 头部工具栏 -->
+<div class="crm-top-bar">
+    <div class="crm-wrapper clearfix">
+        <p class="crm-top-logo">苏宁会员营销平台</p>
+        <ul class="crm-top-list">
+            <a href="">
+                <li class="selected">精准营销</li>
+            </a>
+            <a href="">
+                <li>挖掘与分析</li>
+            </a>
+            <a href="">
+                <li>应用产品</li>
+            </a>
+        </ul>
+        <div class="crm-top-user">
+            <a class="todo-detail">
+                <i class="icon"></i>您当前有<em class="num">6</em>条待办！
+            </a>
+                <span class="user-detail">
+                    <i class="icon"></i>张某某<em class="userID">(18888888)</em>
+                </span>
+            <a class="user-exit" href="javascript:;">注销</a>
+        </div>
+    </div>
+</div>
+
+<div class="crm-wrapper clearfix">
+    <!-- 导航标签 -->
+    <div class="nav-tab">
+        <a href="javascript:;" class="nav-tab-item tit-root">
+            <i class="item-icon9"></i>聚宝盆
+        </a>
+        <a href="javascript:;" class="nav-tab-item">
+            <i class="item-icon1"></i>首页
+        </a>
+        <a href="javascript:;" class="nav-tab-item">
+            <i class="item-icon2"></i>标签
+        </a>
+        <a href="javascript:;" class="nav-tab-item">
+            <i class="item-icon3"></i>人群
+        </a>
+        <a href="javascript:;" class="nav-tab-item">
+            <i class="item-icon5"></i>活动
+        </a>
+        <a href="javascript:;" class="nav-tab-item current">
+            <i class="item-icon8"></i>直播间
+        </a>
+    </div>
+
+    <!-- 标签页展示主体内容 -->
+    <div class="tab-content">
+        <ul class="wrapper clearfix">
+            <li class="on"><a href="">实时概况</a></li>
+            <li><a href="">实时榜单</a></li>
+            <li><a href="">活动对比</a></li>
+        </ul>
+        <div class="controller">
+            <table>
+                <tr>
+                    <td>活动属性：</td>
+                    <td>执行渠道：</td>
+                    <td>发送时间：</td>
+                    <td>选择活动：</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            <input type="text"/>
+                            <i></i>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <input type="text"/>
+                            <i></i>
+                        </p>
+                    </td>
+                    <td>
+                        <p class="date">
+                            <input type="text"/>
+                            <i></i>
+                        </p>
+                    </td>
+                    <td>
+                        <p class="active">
+                            <input type="text"/>
+                            <i></i>
+                        </p>
+                    </td>
+                    <td>
+                        <input class="scr-btn" type="button" value="确定"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <p class="declare"><i></i><span>特别声明：以下数据计算均以理想环境为前提，实际数据值以报表为准</span></p>
+
+        <div class="to-screen">
+            <p class="basic"><span class="b-tit">活动概况</span><span class="b-date">更新时间：<em>2015-10-2910:00:00</em></span><a href="javascript:;">设置显示指标&nbsp;<i></i></a><i>最多只能选择6个指标哦</i></p>
+        </div>
+        <div class="scr-contain clearfix">
+            <ul class="scr-vri">
+                <li>
+                    <div class="radius rad-1">
+                        <p class="tit">发送会员数</p>
+
+                        <p class="count"><em>25683893</em>人</p>
+
+                        <p class="mobile hide"><i></i>&nbsp;<em>60.8</em>&#37;</p>
+
+                        <p class="no-data hide">数据加载中...</p>
+                    </div>
+                    <p class="description">截至昨日<em>12312312</em>人</p>
+                </li>
+                <li>
+                    <div class="radius"> <!--rad-2-->
+                        <p class="tit hide">发送会员数</p>
+
+                        <p class="count hide"><em>25683893</em>人</p>
+
+                        <p class="mobile hide"><i></i>&nbsp;<em>60.8</em>&#37;</p>
+
+                        <p class="no-data">数据加载中...</p>
+                    </div>
+                    <p class="description">截至昨日<em>12312312</em>人</p>
+                </li>
+                <li>
+                    <div class="radius rad-3">
+                        <p class="tit">发送会员数</p>
+
+                        <p class="count"><em>25683893</em>人</p>
+
+                        <p class="mobile"><i></i>&nbsp;<em>60.8</em>&#37;</p>
+                        <p class="no-data hide">数据加载中...</p>
+
+                    </div>
+                    <p class="description">截至昨日<em>12312312</em>人</p>
+                </li>
+                <li>
+                    <div class="radius rad-4">
+                        <p class="tit">发送会员数</p>
+
+                        <p class="count"><em>25683893</em>人</p>
+
+                        <p class="mobile"><i></i>&nbsp;<em>60.8</em>&#37;</p>
+                        <p class="no-data hide">数据加载中...</p>
+
+                    </div>
+                    <p class="description">截至昨日<em>12312312</em>人</p>
+                </li>
+                <li>
+                    <div class="radius rad-5">
+                        <p class="tit">发送会员数</p>
+
+                        <p class="count"><em>25683893</em>人</p>
+
+                        <p class="mobile"><i></i>&nbsp;<em>60.8</em>&#37;</p>
+                        <p class="no-data hide">数据加载中...</p>
+
+                    </div>
+                    <p class="description">截至昨日<em>12312312</em>人</p>
+                </li>
+                <li>
+                    <div class="radius rad-6">
+                        <p class="tit">发送会员数</p>
+
+                        <p class="count"><em>25683893</em>人</p>
+
+                        <p class="mobile"><i></i>&nbsp;<em>60.8</em>&#37;</p>
+                        <p class="no-data hide">数据加载中...</p>
+
+                    </div>
+                    <p class="description">截至昨日<em>12312312</em>人</p>
+                </li>
+            </ul>
+        </div>
+        <div class="to-screen">
+            <p class="basic"><span class="b-tit">整点监控</span><span class="b-date">更新时间：<em>2015-10-2910:00:00</em></span>
+            </p>
+        </div>
+        <div class="do-list clearfix">
+            <div class="l-left">
+                <div class="l-data pos-1">
+                    <p>点击率</p>
+
+                    <p><em>80</em>&#37;</p>
+                </div>
+                <div class="l-data pos-2">
+                    <p>下单转化率</p>
+
+                    <p><em>65</em>&#37;</p>
+                </div>
+                <div class="l-data pos-3">
+                    <p>支付转化率</p>
+
+                    <p><em>65</em>&#37;</p>
+                </div>
+                <div class="l-data pos-4">
+                    <p>C转化率</p>
+
+                    <p><em>9.8</em>&#37;</p>
+                </div>
+            </div>
+            <div class="l-right">
+                <ul>
+                    <li class="clearfix">
+                        <div class="l-tit size-1">营销人群</div>
+                        <div class="l-contain bg1">
+                            <div class="l-detail d-pos1">
+                                <table>
+                                    <tr>
+                                        <td>发送人数：</td>
+                                        <td class="tin">3214521345</td>
+                                    </tr>
+                                    <tr>
+                                        <td>环比：</td>
+                                        <td class="tin up"><i></i>234123</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="l-tit size-2">访问人员</div>
+                        <div class="l-contain bg2">
+                            <div class="l-detail d-pos2">
+                                <table>
+                                    <tr>
+                                        <td>访问会员数：</td>
+                                        <td class="tin">3214521345</td>
+                                    </tr>
+                                    <tr>
+                                        <td>环比：</td>
+                                        <td class="tin up"><i></i>234123</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="l-detail d-pos3">
+                                <table>
+                                    <tr>
+                                        <td>浏览量（PV）：</td>
+                                        <td class="tin">3214521345</td>
+                                    </tr>
+                                    <tr>
+                                        <td>环比：</td>
+                                        <td class="tin up"><i></i>234123</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="l-tit size-3">下单</div>
+                        <div class="l-contain bg3">
+                            <div class="l-detail d-pos4">
+                                <table>
+                                    <tr>
+                                        <td>提交订单金额：</td>
+                                        <td class="tin">3214521345</td>
+                                    </tr>
+                                    <tr>
+                                        <td>环比：</td>
+                                        <td class="tin up"><i></i>234123</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="l-detail d-pos5">
+                                <table>
+                                    <tr>
+                                        <td>发送人数：</td>
+                                        <td class="tin">3214521345</td>
+                                    </tr>
+                                    <tr>
+                                        <td>环比：</td>
+                                        <td class="tin up"><i></i>234123</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="l-tit size-4">支付</div>
+                        <div class="l-contain bg4">
+                            <div class="l-detail d-pos6">
+                                <table>
+                                    <tr>
+                                        <td>支付金额：</td>
+                                        <td class="tin">3214521345</td>
+                                    </tr>
+                                    <tr>
+                                        <td>环比：</td>
+                                        <td class="tin up"><i></i>234123</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="l-detail d-pos7">
+                                <table>
+                                    <tr>
+                                        <td>支付金额：</td>
+                                        <td class="tin">3214521345</td>
+                                    </tr>
+                                    <tr>
+                                        <td>环比：</td>
+                                        <td class="tin down"><i></i>234123</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="to-screen">
+            <p class="basic"><span class="b-tit">地域分布</span><span class="b-date">更新时间：<em>2015-10-2910:00:00</em></span>
+            </p>
+        </div>
+        <div class="map-option clearfix">
+            <a class="on" href="">浏览量(PV)</a>
+            <a href="">访问会员数</a>
+            <a href="">买家数</a>
+            <a href="">支付订单数</a>
+            <a href="">支付金额</a>
+        </div>
+        <div class="map-contain clearfix">
+            <div class="map"></div>
+            <table class="data-list">
+                <tr class="tit">
+                    <td class="conner">排序</td>
+                    <td>省份</td>
+                    <td>浏览量</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>上海</td>
+                    <td>85858</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>上海</td>
+                    <td>85858</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>上海</td>
+                    <td>85858</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>上海</td>
+                    <td>85858</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>上海</td>
+                    <td>85858</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>上海</td>
+                    <td>85858</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>上海</td>
+                    <td>85858</td>
+                </tr>
+            </table>
+            <div class="page">
+                <a href="javascript:;">前一页</a>
+                <a href="javascript">1</a>
+                <a href="javascript">2</a>
+                <a href="javascript">3</a>
+                <a href="javascript">4</a>
+                <a href="javascript:;">后一页</a>
+            </div>
+        </div>
+        <div class="describe">
+            <div class="des-contain clearfix">
+                <div class="dc-left"></div>
+                <div class="dc-right">
+                    2015-10-25期间，<em>双十一小云钻撞大奖</em> 活动共发送 <em>3448555</em> 名会员，其中男性占比 <em>57.0</em>% ，25-36岁占比
+                    <em>30.0</em>% 。
+                    访问会员 <em>99999</em> 名，提交会员 <em>4002</em> 名，共提交订单 <em>19990</em> 单，实际支付买家 <em>2000</em> 人，购买目标品类买家
+                    <em>5000</em> 人，C转化率 <em>2.96</em>%，D转化率 <em>4.87</em>%，C-D差距越小越精准。
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 引入项目js资源文件,并配置构建地址演示 -->
+<!-- build:js ./assets/js/crm.js -->
+<script type="text/javascript" src="js/crm.js"></script>
+<!-- endbuild -->
+</body>
+</html>
