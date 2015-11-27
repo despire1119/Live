@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CRM</title>
+    <meta name="keywords" content="&#x9879;&#x76EE;&#x5173;&#x952E;&#x8BCD;">
+    <meta name="description" content="&#x9879;&#x76EE;&#x63CF;&#x8FF0;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script>
+        var sn = sn || {}
+    </script>
+
+    <!-- 引入全站公用资源文件 -->
+    <!--#include file="/include/resources.shtml"-->
+
+    <!-- 引入项目css资源文件,并配置构建地址演示 -->
+    <link rel="stylesheet" href="./assets/css/jquery.autocomplete.css">
+    <link rel="stylesheet" href="./assets/css/calendar.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/public/js/DD_belatedPNG.js"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix(".crm-top-logo");
+    </script>
+    <![endif]-->
+</head>
+<!--[if lt IE 7 ]>
+<body class="ie ie6"><![endif]-->
+<!--[if IE 7 ]>
+<body class="ie ie7"><![endif]-->
+<!--[if IE 8 ]>
+<body class="ie ie8"><![endif]-->
+<!--[if IE 9 ]>
+<body class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body><!--<![endif]-->
+
+<!-- 头部工具栏 -->
+<div class="crm-top-bar">
+    <div class="crm-wrapper clearfix">
+        <p class="crm-top-logo">苏宁会员营销平台</p>
+        <ul class="crm-top-list">
+            <a href="">
+                <li class="selected">精准营销</li>
+            </a>
+            <a href="">
+                <li>挖掘与分析</li>
+            </a>
+            <a href="">
+                <li>应用产品</li>
+            </a>
+        </ul>
+        <div class="crm-top-user">
+            <a class="todo-detail">
+                <i class="icon"></i>您当前有<em class="num">6</em>条待办！
+            </a>
+                <span class="user-detail">
+                    <i class="icon"></i>张某某<em class="userID">(18888888)</em>
+                </span>
+            <a class="user-exit" href="javascript:;">注销</a>
+        </div>
+    </div>
+</div>
+
+<div class="crm-wrapper clearfix">
+    <!-- 导航标签 -->
+    <div class="nav-tab">
+        <a href="javascript:;" class="nav-tab-item tit-root">
+            <i class="item-icon9"></i>聚宝盆
+        </a>
+        <a href="javascript:;" class="nav-tab-item">
+            <i class="item-icon1"></i>首页
+        </a>
+        <a href="javascript:;" class="nav-tab-item">
+            <i class="item-icon2"></i>标签
+        </a>
+        <a href="javascript:;" class="nav-tab-item">
+            <i class="item-icon3"></i>人群
+        </a>
+        <a href="javascript:;" class="nav-tab-item">
+            <i class="item-icon5"></i>活动
+        </a>
+        <a href="javascript:;" class="nav-tab-item current">
+            <i class="item-icon8"></i>直播间
+        </a>
+    </div>
+
+    <!-- 标签页展示主体内容 -->
+    <div class="tab-content">
+        <ul class="wrapper clearfix">
+            <li><a href="">实时概况</a></li>
+            <li><a href="">实时榜单</a></li>
+            <li class="on"><a href="">活动对比</a></li>
+        </ul>
+        <div class="controller">
+            <table>
+                <tr>
+                    <td>活动属性：</td>
+                    <td>执行渠道：</td>
+                    <td>发送时间：</td>
+                    <td>选择活动：</td>
+                    <td></td>
+                </tr>
+                <tr class="appender" id="line-1">
+                    <td>
+                        <p>
+                            <input type="text" id="autocomplete">
+                            <i></i>
+                        </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
+                    </td>
+                    <td>
+                        <p>
+                            <input type="text">
+                            <i></i>
+                        </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="date">
+                            <input type="text" readonly="readonly">
+                            <i></i>
+                        </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
+                    </td>
+                    <td class="sel-parent">
+                        <p class="active">
+                            <input type="text">
+                            <i></i>
+                        </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="handler add hide"></span>
+                        <span class="handler remove hide"></span>
+                        <!--<input class="scr-btn" type="button" value="确定"/>-->
+                    </td>
+                </tr>
+                <tr class="appender" id="line-2">
+                    <td>
+                        <p>
+                            <input type="text">
+                            <i></i>
+                        </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
+                    </td>
+                    <td>
+                        <p>
+                            <input type="text">
+                            <i></i>
+                        </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="date">
+                            <input type="text" readonly="readonly">
+                            <i></i>
+                        </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
+                    </td>
+                    <td class="sel-parent">
+                        <p class="active">
+                            <input type="text">
+                            <i></i>
+                        </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="handler add"></span>
+                        <span class="handler remove hide"></span>
+
+                        <!--<input class="scr-btn" type="button" value="确定"/>-->
+                    </td>
+                </tr>
+                <tr class="appender hide" id="line-3">
+                    <td>
+                        <p>
+                            <input type="text">
+                            <i></i>
+                        </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
+                    </td>
+                    <td>
+                        <p>
+                            <input type="text">
+                            <i></i>
+                        </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="date">
+                            <input type="text" readonly="readonly">
+                            <i></i>
+                        </p>
+                    </td>
+                    <td class="sel-parent">
+                        <p class="active">
+                            <input type="text">
+                            <i></i>
+                        </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="handler add"></span>
+                        <span class="handler remove"></span>
+
+                        <!--<input class="scr-btn" type="button" value="确定"/>-->
+                    </td>
+                </tr>
+            </table>
+            <p class="con-action">
+                最近查看活动：
+                <em>双十一小云钻撞大奖</em><a href="javascript:;"><i></i>对比</a>
+                <span class="line"></span>
+                <em>双十一小云钻撞大奖...</em><a href="javascript:;"><i></i>对比</a>
+                <span class="line"></span>
+                <em>双十一小云钻撞大奖...</em><a href="javascript:;"><i></i>对比</a>
+
+                <input class="scr-btn" type="button" value="&#x786E;&#x5B9A;">
+            </p>
+        </div>
+
+        <div class="to-screen">
+            <p class="basic"><span class="b-tit">对比分析结果</span><span class="b-date">更新时间：<em>2015-10-2910:00:00</em></span><a id="sort-by" href="javascript:;">设置显示指标&nbsp;<i></i></a><i class="tip hide">最多只能选择6个指标哦</i></p>
+        </div>
+        <!--筛选-->
+        <div class="sort-ele bbn hide">
+            <p>
+                <span class="ele-head">发送指标：</span>
+                <span class="ele-opt"><input type="button" value="&#x53D1;&#x9001;&#x4F1A;&#x5458;&#x6570;"></span>
+            </p>
+            <p>
+                <span class="ele-head">流量指标：</span>
+                <span class="ele-opt">
+                    <input type="button" value="&#x6D4F;&#x89C8;&#x91CF;&#xFF08;PV&#xFF09;">
+                    <input type="button" value="UV">
+                    <input type="button" value="&#x8BBF;&#x95EE;&#x4F1A;&#x5458;&#x6570;">
+                </span>
+            </p>
+            <p>
+                <span class="ele-head">流量指标：</span>
+                <span class="ele-opt">
+                    <input type="button" value="&#x52A0;&#x5165;&#x8D2D;&#x7269;&#x8F66;&#x4F1A;&#x5458;&#x6570;">
+                    <input type="button" value="&#x63D0;&#x4EA4;&#x8BA2;&#x5355;&#x4F1A;&#x5458;&#x6570;">
+                    <input type="button" value="&#x63D0;&#x4EA4;&#x8BA2;&#x5355;&#x6570;">
+                    <input type="button" value="&#x63D0;&#x4EA4;&#x8BA2;&#x5355;&#x91D1;&#x989D;">
+                    <input type="button" value="&#x4E70;&#x5BB6;&#x6570;">
+                    <input type="button" value="&#x652F;&#x4ED8;&#x8BA2;&#x5355;&#x6570;">
+                    <input type="button" value="&#x652F;&#x4ED8;&#x91D1;&#x989D;">
+                </span>
+            </p>
+            <p>
+                <span class="ele-head">流量指标：</span>
+                <span class="ele-opt">
+                    <input type="button" value="&#x76EE;&#x6807;&#x54C1;&#x7C7B;&#x4E70;&#x5BB6;">
+                    <input type="button" value="&#x76EE;&#x6807;&#x54C1;&#x724C;&#x4E70;&#x5BB6;">
+                    <input type="button" value="&#x76EE;&#x6807;&#x5355;&#x54C1;&#x4E70;&#x5BB6;">
+                    <input type="button" value="C&#x8F6C;&#x5316;&#x7387;">
+                    <input type="button" value="D&#x8F6C;&#x5316;&#x7387;">
+                </span>
+            </p>
+            <p class="ent-btn"><input type="button" value="&#x786E;&#x5B9A;"></p>
+        </div>
+        <div class="chart-area empty clearfix">
+            <div class="lion"></div>
+            <p>要选择活动对比哦~</p>
+        </div>
+
+        <div class="chart-area clearfix">
+            <div class="chart-tip">
+                <i class="left"></i>
+                <i class="right"></i>
+                <em>访问会员数</em>
+            </div>
+            <div class="chart"></div>
+            <div class="chart"></div>
+        </div>
+        <div class="chart-area clearfix">
+            <div class="chart-tip">
+                <i class="left"></i>
+                <i class="right"></i>
+                <em>加入购物车会员数</em>
+            </div>
+            <div class="chart"></div>
+            <div class="chart"></div>
+        </div>
+    </div>
+</div>
+<div class="cover hide"></div>
+<div class="pop hide">
+    <p class="tit">温馨提示<i></i></p>
+    <p class="contain">您最多可选择6个指标查看数据</p>
+    <input class="btn" type="button" value="&#x786E;&#x5B9A;">
+</div>
+<!-- 引入项目js资源文件,并配置构建地址演示 -->
+<script src="./assets/js/autocomplete.js"></script>
+<script src="./assets/js/ECode.calendar.js"></script>
+<script src="./assets/js/common.js"></script>
+<script>
+    var data=[ "黑店黑店黑店","王浩然", "王李伟", "王李伟","王张荣", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "coldfusion", "javascript", "asp", "ruby"];
+
+    c.searcher('#autocomplete',data)
+    c.logic(6)
+    c.init()
+</script>
+</body>
+</html>

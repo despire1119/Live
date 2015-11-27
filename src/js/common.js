@@ -29,28 +29,29 @@ var c = {
 //        formatted:formatResult函数返回的值
         })
     },
-    eCode: function () {
+    eCode: function (id) {
+        var selector = $(id).find('.date')
         ECode.calendar({
-            inputBox: $('.date').find('input'),
+            inputBox: selector.find('input'),
             isSelect: true,
             flag: false,
             isTime: false,
             isWeek: false
         })
     },
-    logic: function () {
+    logic: function (type) {
         var that = $('#sort-by')
         var _this = $('.sort-ele')
         var opt = $('.ele-opt')
         var tips = $('.basic').find('.tip')
 
         function toShow(obj) {
-            obj.fadeIn(200)
+            obj.removeClass('hide')
             that.addClass('over')
         }
 
         function toHide(obj) {
-            obj.fadeOut(200)
+            obj.addClass('hide')
             that.removeClass('over')
         }
 
@@ -74,12 +75,12 @@ var c = {
             //个数
             count = 0
             opt.find('input').each(function () {
-                $(this).hasClass('on') ? count++ : console.log(0)
+                $(this).hasClass('on') ? count++ : null
             })
-            count > 6 ? tip() : noTip()
+            count > type ? tip() : noTip()
         })
         $('.ent-btn').find('input').click(function () {
-            count > 6 ? c.popShow() : console.log('此处回调')
+            count > type ? c.popShow() : null
         })
     },
 
@@ -87,7 +88,7 @@ var c = {
         var map = $('.map-option').find('a')
         map.on('click', function () {
             $(this).addClass('on').siblings().removeClass('on')
-            console.log('此处回调')
+            //console.log('此处回调')
         })
     },
 
@@ -104,11 +105,89 @@ var c = {
             $('.cover,.pop').addClass('hide')
         })
     },
+    compare: function () {
+        var count = 0
+        $('.controller').find('.add').on('click', function () {
+            $('.controller').find('tr:hidden').removeClass('hide')
+            doRefector()
+        })
+        $('.controller').find('.remove').on('click', function () {
+            $(this).parent().parent().addClass('hide').find('input').attr('value', '')
+            doRefector()
+        })
+
+        function status1() {
+            //删除
+            $('.controller').find('.add').addClass('hide')
+            $('.controller').find('.remove').removeClass('hide')
+        }
+
+        function status2() {
+            //添加
+            var rst = $('.controller').find('tr:visible').eq(1)
+            $('.controller').find('.remove').addClass('hide')
+            $('.controller').find('.add').removeClass('hide')
+            rst.find('.add').addClass('hide')
+        }
+
+        //当前状态
+        function doRefector() {
+            count = 0
+            count = $('.controller').find('tr:visible').length
+            count > 3 ? status1() : status2()
+        }
+
+        doRefector()
+    },
+    select: function () {
+        function allHide() {
+            $('.select').addClass('hide')
+        }
+
+        function h(_this, inp) {
+            _this.addClass('hide')
+        }
+
+        function s(_this, inp) {
+            _this.removeClass('hide')
+        }
+
+        function doit(obj,i) {
+            $(obj).is(i) ? null : allHide()
+        }
+
+        $('.controller').find('i').on('click', function () {
+            var select = $(this).parent().siblings('.select')
+            var inp = $(this).siblings('input')
+            allHide()
+            select.is(':hidden') ? s(select, inp) : h(select, inp)
+        })
+
+        $('.select').find('a').on('click', function () {
+            var txt = $(this).text()
+            var _select = $(this).parent()
+            _select.addClass('hide').siblings('p').find('input').attr('value', txt)
+        })
+
+        $(document).click(function () {
+            e = window.event || e;
+            var obj = e.srcElement || e.target;
+            var target = $('.select').find('a')
+            var i = $('.controller').find('i')
+            if ($('.select').is(':visible')) {
+                $(obj).is(target) ? null : doit(obj,i)
+            }
+
+        })
+    },
 
     init: function () {
-        c.logic()
+        c.select()
         c.popHide()
         c.map()
-        c.eCode()
+        c.eCode('#line-1')
+        c.eCode('#line-2')
+        c.eCode('#line-3')
+        c.compare()
     }
 }

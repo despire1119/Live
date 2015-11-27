@@ -108,12 +108,22 @@
                             <input type="text" id="autocomplete">
                             <i></i>
                         </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
                     </td>
                     <td>
                         <p>
                             <input type="text">
                             <i></i>
                         </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
                     </td>
                     <td>
                         <p class="date">
@@ -121,11 +131,16 @@
                             <i></i>
                         </p>
                     </td>
-                    <td>
+                    <td class="sel-parent">
                         <p class="active">
                             <input type="text">
                             <i></i>
                         </p>
+                        <div class="select hide">
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                            <a value="123" href="javascript:;">黑店黑店黑店</a>
+                        </div>
                     </td>
                     <td>
                         <input class="scr-btn" type="button" value="&#x786E;&#x5B9A;">
@@ -480,9 +495,10 @@
 <script src="./assets/js/ECode.calendar.js"></script>
 <script src="./assets/js/common.js"></script>
 <script>
-    var data=[ "王浩然", "王李伟", "王李伟","王张荣", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "coldfusion", "javascript", "asp", "ruby"];
+    var data=[ "黑店黑店黑店","王浩然", "王李伟", "王李伟","王张荣", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "王璠", "coldfusion", "javascript", "asp", "ruby"];
 
     c.searcher('#autocomplete',data)
+    c.logic(6)
     c.init()
 </script>
 </body>

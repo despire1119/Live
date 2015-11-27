@@ -76,7 +76,7 @@ html, body {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .crm-wrapper {
@@ -309,8 +309,13 @@ html, body {
     tr {
       height: 30px;
     }
+    tr.appender {
+      height: 45px;
+    }
     td {
+      position: relative;
       color: #909090;
+      z-index: 10000;
       p {
         width: 155px;
         height: 30px;
@@ -333,7 +338,8 @@ html, body {
           margin-top: 12px;
           width: 11px;
           height: 6px;
-          background: url("images/sprite-crm.png") no-repeat -136px -31px;
+          background: url("images/sprite-crm.png") no-repeat -136px -38px;
+          cursor: pointer;
         }
       }
       .date {
@@ -359,11 +365,110 @@ html, body {
       }
       .active {
         width: 375px;
-        input{
+        input {
           width: 360px;
         }
       }
       .scr-btn {
+        width: 96px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        color: #ffffff;
+        font-size: 12px;
+        background: #5871a7;
+        border: 0;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover {
+          background: #425889;
+        }
+      }
+      .handler {
+        display: inline-block;
+        margin-top: 3px;
+        margin-left: 1px;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+      }
+      .add {
+        background: url("images/sprite-crm.png") no-repeat -79px -112px;
+      }
+      .remove{
+        background: url("images/sprite-crm.png") no-repeat -108px -112px;
+      }
+      .select{
+        position: absolute;
+        top: 32px;
+        border: 1px solid #dddddd;
+        border-top: 0;
+        max-height: 180px;
+        overflow: auto;
+        a{
+          display: block;
+          width: 160px;
+          height: 30px;
+          line-height: 30px;
+          text-indent: 10px;
+          background: #ffffff;
+          overflow: hidden;
+          color: #666;
+          text-decoration: none;
+          cursor: pointer;
+          z-index: 10000;
+          &:hover{
+            background: #5871a7;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+    .sel-parent{
+      .select{
+        a{
+          width: 380px;
+        }
+      }
+    }
+    .con-action {
+      position: relative;
+      width: 878px;
+      padding-top: 5px;
+      color: #909090;
+      a {
+        display: inline-block;
+        width: 70px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        background: #f6f6f6;
+        color: #555555;
+        margin-left: 10px;
+        font-size: 14px;
+        i {
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          background: url("images/sprite-crm.png") no-repeat -190px -92px;
+        }
+      }
+      span.line {
+        position: relative;
+        top: 5px;
+        display: inline-block;
+        width: 0;
+        height: 20px;
+        border-left: 1px solid #cccccc;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      .scr-btn {
+        position: absolute;
+        right: 0;
+        bottom: 0;
         width: 96px;
         height: 30px;
         line-height: 30px;
@@ -391,6 +496,7 @@ html, body {
       height: 14px;
       margin-right: 3px;
       background: url("images/sprite-crm.png") no-repeat -116px -87px;
+      z-index: 0;
     }
     span {
       display: inline-block;
@@ -438,7 +544,7 @@ html, body {
       }
     }
     .over {
-      i{
+      i {
         background: url("images/sprite-crm.png") no-repeat -164px -32px;
       }
     }
@@ -447,7 +553,7 @@ html, body {
     padding: 20px 0px 20px 20px;
     color: #666;
     border-bottom: 1px solid #e0e0e0;
-    p{
+    p {
       padding-bottom: 20px;
     }
     .ele-head {
@@ -464,19 +570,19 @@ html, body {
         border: 1px solid #dadadb;
         background: #ffffff;
         cursor: pointer;
-        &:hover{
+        &:hover {
           border-color: #5871a7;
         }
       }
-      .on{
-        background: url("images/sprite-crm.png") no-repeat -149px -91px;
+      .on {
+        background: url("images/sprite-crm.png") no-repeat -204px -91px;
         border-color: #5871a7;
       }
     }
-    .ent-btn{
+    .ent-btn {
       padding-left: 81px;
       padding-bottom: 0;
-      input{
+      input {
         display: block;
         width: 115px;
         height: 30px;
@@ -485,11 +591,14 @@ html, body {
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        &:hover{
+        &:hover {
           background: #425889;
         }
       }
     }
+  }
+  .bbn {
+    border-bottom: 0;
   }
   .scr-contain {
     padding-top: 30px;
@@ -694,10 +803,12 @@ html, body {
         background: url("images/table-element.png") no-repeat -6px -105px;
       }
       .size-3 {
+        width: 180px;
         text-indent: 52px;
         background: url("images/table-element.png") no-repeat -6px -210px;
       }
       .size-4 {
+        width: 138px;
         text-indent: 32px;
         background: url("images/table-element.png") no-repeat -6px -315px;
       }
@@ -791,7 +902,7 @@ html, body {
         color: #666;
         text-decoration: none;
       }
-      a.on{
+      a.on {
         border-color: #5871a7;
         color: #5871a7;
       }
@@ -822,10 +933,152 @@ html, body {
           font-weight: bold;
         }
       }
+      .reader {
+        background: url("images/table-element.png") no-repeat -201px -285px;
+      }
+    }
+  }
+  .list {
+    border: 1px solid #e0e0e0;
+    border-top: 0;
+    .ta-con {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    td {
+      height: 90px;
+      text-align: center;
+      vertical-align: middle;
+      border-bottom: 1px dashed #e0e0e0;
+      img {
+        float: left;
+        width: 59px;
+        height: 59px;
+        border: 1px solid #e0e0e0;
+        margin-right: 10px;
+      }
+    }
+    .goods {
+      width: 260px;
+      padding-right: 5px;
+      text-align: left;
+      em{
+        display: inline-block;
+        float: left;
+        margin-top: 12px;
+        width: 175px;
+        height: 36px;
+        overflow: hidden;
+      }
+    }
+    .goods0 {
+      width: 265px;
+    }
+    .pv {
+      width: 130px;
+    }
+    .pv-fix {
+      width: 133px;
+    }
+    .cus {
+      width: 110px;
+    }
+    .cus-fix {
+      width: 104px;
+    }
+    .cash {
+      width: 150px;
+    }
+    .cash-fix {
+      width: 156px;
+    }
+    .percent {
+      width: 120px;
+    }
+    .percent-fix {
+      width: 100px;
+    }
+    .plus {
+      width: 70px;
+    }
+    .plus-fix {
+      width: 97px;
+    }
+    table {
+      padding-left: 15px;
+      padding-right: 15px;
+      vertical-align: middle;
+    }
+    .tit {
+      li {
+        float: left;
+        height: 38px;
+        line-height: 38px;
+        text-align: center;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 14px;
+        color: #333333;
+      }
+    }
+  }
+  .chart-area {
+    position: relative;
+    margin-top: 50px;
+    border-top: 1px solid #e0e0e0;
+    .chart-tip {
+      position: absolute;
+      top: -6px;
+      left: 30px;
+      height: 30px;
+      padding: 0 10px;
+      border-top: 1px solid #5871a7;
+      border-bottom: 1px solid #5871a7;
+      line-height: 30px;
+      font-size: 18px;
+      color: #5871a7;
+      background: #ffffff;
+      i {
+        position: absolute;
+        display: block;
+        width: 16px;
+        height: 32px;
+        top: -1px;
+      }
+      i.left {
+        left: -16px;
+        background: url("images/coner_left.png") no-repeat;
+      }
+      i.right {
+        right: -16px;
+        background: url("images/coner_right.png") no-repeat;
+      }
+    }
+    .chart {
+      width: 935px;
+      height: 340px;
+      padding: 50px 20px 0;
+    }
+  }
+  .empty{
+    margin-top: 0;
+    padding: 50px 320px;
+    border-top: 0;
+    .lion{
+      float: left;
+      margin-right: 15px;
+      width: 99px;
+      height: 124px;
+      background: url("images/lion.png") no-repeat;
+    }
+    p{
+      font-size: 18px;
+      color: #666;
+      line-height: 123px;
     }
   }
 }
-.cover{
+
+.cover {
   position: fixed;
   top: 0;
   left: 0;
@@ -835,7 +1088,8 @@ html, body {
   opacity: .7;
   z-index: 10000;
 }
-.pop{
+
+.pop {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -846,13 +1100,13 @@ html, body {
   height: 255px;
   background: #ffffff;
   z-index: 10001;
-  .tit{
+  .tit {
     height: 20px;
     padding: 15px;
     font-size: 16px;
     color: #ffffff;
     background: #5871a7;
-    i{
+    i {
       display: inline-block;
       float: right;
       width: 18px;
@@ -861,13 +1115,13 @@ html, body {
       cursor: pointer;
     }
   }
-  .contain{
+  .contain {
     margin-top: 55px;
     text-align: center;
     color: #333333;
     font-size: 18px;
   }
-  input.btn{
+  input.btn {
     display: block;
     border: 0;
     border-radius: 5px;
@@ -880,15 +1134,33 @@ html, body {
     cursor: pointer;
   }
 }
-.ac_results{
+
+.ac_results {
   border-color: #e0e0e0;
-  .ac_over{
+  .ac_over {
     background: #5871a7;
   }
 }
-.ac_odd{
+
+.ac_odd {
   background: #f8f8f8;
 }
-.ac_even{
+
+.ac_even {
   background: #f8f8f8;
+}
+
+#line-1{
+  td{
+    z-index: 903;
+  }
+}
+#line-2{
+  td{
+    z-index: 902;
+  }}
+#line-3{
+  td{
+    z-index: 901;
+  }
 }
